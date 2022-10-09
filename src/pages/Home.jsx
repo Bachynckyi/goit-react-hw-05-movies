@@ -16,7 +16,7 @@ export const Home = () => {
     }
 
     return (
-        <TrendingMoviesList trendingMovies={trendingMovies}/>
+        <TrendingMoviesList trendingMovies={trendingMovies} title={"Trending today"}/>
     );
 };
 

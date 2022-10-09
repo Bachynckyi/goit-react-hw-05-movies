@@ -1,0 +1,7 @@
+.moviesList {
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 80px;
+};
+

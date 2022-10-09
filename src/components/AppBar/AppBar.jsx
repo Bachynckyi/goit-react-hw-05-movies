@@ -1,4 +1,6 @@
 import { NavLink } from 'react-router-dom';
+import css from './AppBar.module.css';
+
 
 export const AppBar = () => {
     const navItems = [
@@ -7,12 +9,13 @@ export const AppBar = () => {
     ];
 
     return (
-        <header>
+        <header className={css.header}>
             <nav>
                 {navItems.map(({href, text}) => (
                     <NavLink
-                    to={href}
-                    key={href}
+                        className={css.link}
+                        to={href}
+                        key={href}
                     >{text}
                     </NavLink>
             ))}

@@ -1,5 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { ButtonBack } from 'components/ButtonBack/ButtonBack';
+import { Additional } from 'components/Additional/Additional';
 import * as API from '../serviceAPI/serviceApi';
 
 import  { MovieInfo} from '../components/MovieInfo/MovieInfo';
@@ -19,7 +21,10 @@ export const MovieDetails = () => {
       }
 
     return (
-        <MovieInfo movie={movie}/>
-
+        <>
+            <ButtonBack />
+            <MovieInfo movie={movie}/>
+            <Additional />
+        </>
     );
 };

@@ -14,11 +14,10 @@ export const getMovieById = async (movieId) => {
 };
 
 
-// export const getMovieDetails = async () => {
-//     const response = await axios.get(`${BASE_URL}trending/movie/day?api_key=${KEY}`);
-//     console.log(response.data);
-//     return response.data;
-// };
+export const getMoviesSearch = async (query) => {
+    const response = await axios.get(`${BASE_URL}search/movie?api_key=${KEY}&query=${query}`);
+    return response.data;
+};
 
 // export const getMovieCredits = async () => {
 //     const response = await axios.get(`${BASE_URL}trending/movie/day?api_key=${KEY}`);
