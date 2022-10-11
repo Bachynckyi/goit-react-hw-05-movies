@@ -1,4 +1,4 @@
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams, useLocation, Outlet } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { ButtonBack } from 'components/ButtonBack/ButtonBack';
 import { Additional } from 'components/Additional/Additional';
@@ -28,6 +28,7 @@ export const MovieDetails = () => {
             <ButtonBack goBack={backLinkHref}/>
             <MovieInfo movie={movie}/>
             <Additional />
+            <Outlet/>
         </>
     );
 };

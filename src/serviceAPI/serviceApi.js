@@ -19,11 +19,10 @@ export const getMoviesSearch = async (query) => {
     return response.data;
 };
 
-// export const getMovieCredits = async () => {
-//     const response = await axios.get(`${BASE_URL}trending/movie/day?api_key=${KEY}`);
-//     console.log(response.data);
-//     return response.data;
-// };
+export const getMovieCast = async (movieId) => {
+    const response = await axios.get(`${BASE_URL}/movie/${movieId}/credits?api_key=${KEY}`);
+    return response.data;
+};
 
 // export const getMovieReviews = async () => {
 //     const response = await axios.get(`${BASE_URL}trending/movie/day?api_key=${KEY}`);

@@ -1,11 +1,20 @@
+import { Link } from "react-router-dom";
 
 
 export const Additional = () => {
+    const additionalItems = [
+        {href: "cast", text: "Cast" },
+        {href: "reviews", text: "Reviews"},
+    ]
     return (
         <div>
             <h4>Additional information</h4>
             <ul>
-                <li>123</li>
+                {additionalItems.map(({ href, text }) => (
+                    <li key={href}>
+                        <Link to={href}>{text}</Link>
+                    </li>
+                ))}
             </ul>
         </div>
     );
