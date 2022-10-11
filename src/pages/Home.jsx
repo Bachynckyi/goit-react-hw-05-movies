@@ -1,6 +1,6 @@
 import * as API from '../serviceAPI/serviceApi';
 import { useState, useEffect} from 'react';
-import { TrendingMoviesList } from 'components/TrendingMoviesList/TrendingMoviesList';
+import { MoviesList } from 'components/MoviesList/MoviesList';
  
 export const Home = () => {
     const [trendingMovies, setTrendingMovies] = useState();
@@ -16,7 +16,7 @@ export const Home = () => {
     }
 
     return (
-        <TrendingMoviesList trendingMovies={trendingMovies} title={"Trending today"}/>
+        <MoviesList movies={trendingMovies} title={"Trending today"}/>
     );
 };
 

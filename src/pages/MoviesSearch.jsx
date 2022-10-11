@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom';
 import * as API from '../serviceAPI/serviceApi';
-import { TrendingMoviesList } from '../components/TrendingMoviesList/TrendingMoviesList';
+import { MoviesList } from '../components/MoviesList/MoviesList';
 
 export const MoviesSearch = () => {
-    const [movies, setMovies] = useState(null);
-    const [inputQuery, setInputQuery] = useState("");
-    const [totalMovies, setTotalMovies] = useState(null);
     const [searchParams, setSearchParams] = useSearchParams();
     const query = searchParams.get('query') ?? '';
+    const [movies, setMovies] = useState(null);
+    const [inputQuery, setInputQuery] = useState(query);
+    const [totalMovies, setTotalMovies] = useState(null);
+    
     
 
     useEffect(() => {
@@ -49,7 +50,7 @@ export const MoviesSearch = () => {
                 />
                 <button type="Search">Search</button>
             </form>
-            {movies && <TrendingMoviesList trendingMovies={movies}/>}
+            {movies && <MoviesList movies={movies}/>}
             {totalMovies === 0 && <div>Not found movies</div>}
         </div>
     );

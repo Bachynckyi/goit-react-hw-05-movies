@@ -1,7 +1,7 @@
+import { Link } from "react-router-dom";
 
-export const ButtonBack = () => {
-
+export const ButtonBack = ({ goBack }) => {
     return (
-        <button type="button">Go back</button>
+        <Link to={goBack}>Go back</Link>
     );
 };

@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { ButtonBack } from 'components/ButtonBack/ButtonBack';
 import { Additional } from 'components/Additional/Additional';
@@ -9,6 +9,9 @@ import  { MovieInfo} from '../components/MovieInfo/MovieInfo';
 export const MovieDetails = () => {
     const { movieId }= useParams();
     const [ movie, setMovie] = useState();
+    const location = useLocation();
+    const backLinkHref = location.state?.from ?? "/";
+
 
     useEffect(() => {
         API.getMovieById(movieId)
@@ -22,7 +25,7 @@ export const MovieDetails = () => {
 
     return (
         <>
-            <ButtonBack />
+            <ButtonBack goBack={backLinkHref}/>
             <MovieInfo movie={movie}/>
             <Additional />
         </>
