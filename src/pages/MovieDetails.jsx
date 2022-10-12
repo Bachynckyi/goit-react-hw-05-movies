@@ -1,16 +1,18 @@
 import { useParams, useLocation, Outlet } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { ButtonBack } from 'components/ButtonBack/ButtonBack';
 import { Additional } from 'components/Additional/Additional';
 import * as API from '../serviceAPI/serviceApi';
 
 import  { MovieInfo} from '../components/MovieInfo/MovieInfo';
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
     const { movieId }= useParams();
     const [ movie, setMovie] = useState();
     const location = useLocation();
     const backLinkHref = location.state?.from ?? "/";
+
+    console.log(backLinkHref)
 
 
     useEffect(() => {
@@ -28,7 +30,11 @@ export const MovieDetails = () => {
             <ButtonBack goBack={backLinkHref}/>
             <MovieInfo movie={movie}/>
             <Additional />
-            <Outlet/>
+            <Suspense fallback={null}>
+                <Outlet />
+            </Suspense>
         </>
     );
 };
+
+export default MovieDetails;

@@ -21,11 +21,10 @@ export const getMoviesSearch = async (query) => {
 
 export const getMovieCast = async (movieId) => {
     const response = await axios.get(`${BASE_URL}/movie/${movieId}/credits?api_key=${KEY}`);
-    return response.data;
+    return response.data.cast;
 };
 
-// export const getMovieReviews = async () => {
-//     const response = await axios.get(`${BASE_URL}trending/movie/day?api_key=${KEY}`);
-//     console.log(response.data);
-//     return response.data;
-// };
+export const getMovieReviews = async (movie_id) => {
+    const response = await axios.get(`${BASE_URL}movie/${movie_id}/reviews?api_key=${KEY}`);
+    return response.data.results;
+};

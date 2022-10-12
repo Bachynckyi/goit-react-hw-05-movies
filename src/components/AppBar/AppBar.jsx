@@ -21,5 +21,5 @@ export const AppBar = () => {
             ))}
             </nav>
         </header>
-    )
-}
+    );
+};
