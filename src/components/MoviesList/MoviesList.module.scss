@@ -1,0 +1,18 @@
+.moviesList {
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 80px;
+};
+
+.trendingTittle {
+    font-size: 34px;
+    margin-left: 40px;
+};
+
+.itemMovie {
+    font-size: 26px;
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    };
+};

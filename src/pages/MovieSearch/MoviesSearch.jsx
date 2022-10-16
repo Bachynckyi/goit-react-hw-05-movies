@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom';
-import * as API from '../serviceAPI/serviceApi';
-import { MoviesList } from '../components/MoviesList/MoviesList';
+import * as API from '../../serviceAPI/serviceApi';
+import { MoviesList } from '../../components/MoviesList/MoviesList';
+import css from './MoviesSearch.module.scss'
 
 const MoviesSearch = () => {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -47,8 +48,9 @@ const MoviesSearch = () => {
                     name='query'
                     placeholder="Search movie"
                     value={inputQuery}
+                    className={css.input}
                 />
-                <button type="Search">Search</button>
+                <button type="Search" className={css.button}>Search</button>
             </form>
             {movies && <MoviesList movies={movies}/>}
             {totalMovies === 0 && <div>Not found movies</div>}

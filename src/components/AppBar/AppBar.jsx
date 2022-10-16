@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import css from './AppBar.module.css';
+import css from './AppBar.module.scss';
 
 
 export const AppBar = () => {
@@ -13,9 +13,11 @@ export const AppBar = () => {
             <nav>
                 {navItems.map(({href, text}) => (
                     <NavLink
-                        className={css.link}
-                        to={href}
-                        key={href}
+                    className={({ isActive }) =>
+                        isActive ? `${css.active}` : `${css.link}`
+                    }
+                    to={href}
+                    key={href}
                     >{text}
                     </NavLink>
             ))}

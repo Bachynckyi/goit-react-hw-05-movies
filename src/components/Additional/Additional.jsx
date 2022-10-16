@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import css from './Additional.module.scss';
 
 
 export const Additional = () => {
@@ -7,8 +8,8 @@ export const Additional = () => {
         {href: "reviews", text: "Reviews"},
     ]
     return (
-        <div>
-            <h4>Additional information</h4>
+        <div className={css.container}>
+            <h4 className={css.titleAdditional}>Additional information</h4>
             <ul>
                 {additionalItems.map(({ href, text }) => (
                     <li key={href}>
