@@ -26,7 +26,7 @@ const MovieDetails = () => {
         <>
             <ButtonBack goBack={backLinkHref}/>
             <MovieInfo movie={movie}/>
-            <Additional />
+            <Additional location={backLinkHref}/>
             <Suspense fallback={null}>
                 <Outlet />
             </Suspense>

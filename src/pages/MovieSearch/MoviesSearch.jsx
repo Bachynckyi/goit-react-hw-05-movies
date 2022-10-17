@@ -17,9 +17,8 @@ const MoviesSearch = () => {
         if (query === '') {
             return;
         };
-
         setMovies(null);
-
+        
         API.getMoviesSearch(query)
             .then(data => {setMovies(data.results); setTotalMovies(data.total_results)})
             .catch(console.log)
@@ -34,7 +33,6 @@ const MoviesSearch = () => {
         const form = event.target;
         const transformQuery = form.query.value.toLowerCase().trim();
         setSearchParams({ query: transformQuery });
-        setMovies([]);
     };
 
     return (
